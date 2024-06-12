@@ -7,7 +7,15 @@ document.getElementById('addTaskButton').addEventListener('click', () => {
     if(taskText !== ""){
         var li = document.createElement('li');
         li.textContent = taskText;
-        
+        li.addEventListener('click', () => {
+            if (li.style.textDecoration === "line-through") {
+                li.style.textDecoration = "none";
+            } else {
+                li.style.textDecoration = "line-through";
+            }
+           li.appendChild(deleteButton);
+        });
+
         var deleteButton = document.createElement('button');
         deleteButton.textContent = "Delete";
         deleteButton.classList.add('deleteTaskButton');
