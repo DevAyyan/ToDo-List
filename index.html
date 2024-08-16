@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo List</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>ToDo List</h1>
-        <div class="input_container">
-            <input type="text" id="newTask" placeholder="Add a new task">
-            <button id="addTaskButton">Add</button>
-        </div>
-        <ul id="taskList"></ul>
-    </div>
-    <script src="script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ToDo List</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <link rel="stylesheet" href="lib/style.css">
+        <script src="lib/elmish.js"></script>
+        <script src="lib/todo-app.js"></script>
+        <script>
+          var model = {
+            todos: [],
+            hash: '#/' 
+          };
+          mount(model, update, view, 'app', subscriptions);
+        </script>
+        <div id="test-app"></div>
+    </body>
+    <script src="lib/todo-app.js"></script>
 </html>
